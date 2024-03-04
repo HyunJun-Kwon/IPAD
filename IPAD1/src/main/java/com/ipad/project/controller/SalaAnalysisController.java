@@ -40,6 +40,7 @@ public class SalaAnalysisController{
 	
 	@GetMapping(value ="/saleAnalysis/calculate/{regionCode}")
 	public @ResponseBody List<SaleCalculateVO> getRecommandData(@PathVariable String regionCode) {
+		System.out.println(regionCode);
 		List<SaleCalculateVO> saleCalculate = saleAnalysisService.getRecommandData(regionCode);
 		return saleCalculate;
 	}
