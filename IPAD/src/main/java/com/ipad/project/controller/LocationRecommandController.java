@@ -1,7 +1,5 @@
 package com.ipad.project.controller;
 
-
-
 import java.util.List;
 import java.util.Map;
 
@@ -30,9 +28,9 @@ public class LocationRecommandController{
 	
 		@GetMapping(value="/locationRecommand/recommand")
 		public String viewRecommand(Model model) {
-			return "locationRecommand/recommand";
-			
+			return "locationRecommand/recommand";	
 		}
+		
 		@PostMapping(value ="/json/locationRecommand")
 		public @ResponseBody List<RecommandVO>  getRegionList(@RequestBody Map<String, Boolean> data, Model model) {
 			boolean opt1 = data.get("checkOrth");
