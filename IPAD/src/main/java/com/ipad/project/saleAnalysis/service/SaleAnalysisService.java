@@ -117,7 +117,6 @@ public class SaleAnalysisService implements ISaleAnalysisService {
 		RegionDataVO region = saleRegionData.get(0); // 해당 지역 데이터
 		SalePredictPointVO sale = salePoint.get(0);
 		
-		
 		if(region.getSubway() != 0) {
 			salePd = (int) Math.round((sale.getConstant()
 					+ Math.log10(region.getTwenties()) * sale.getPopulation_20_point()
