@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import com.ipad.project.getRegionData.model.HospitalDetailVO;
 import com.ipad.project.getRegionData.service.IGetRegionDataService;
 import com.ipad.project.locationRecommand.model.RecommandVO;
 import com.ipad.project.locationRecommand.service.IRecommandService;
+import com.ipad.project.population.service.IRegionDataUpdateService;
 
 @Controller
 public class LocationRecommandController{
@@ -25,9 +27,18 @@ public class LocationRecommandController{
 		
 		@Autowired
 		IGetRegionDataService getRegionDataService;
+		
+		@Autowired
+		IRegionDataUpdateService regionDataUpdateService;
+		
+		//서버 시작 실행 후 90일마다 실행
+		@Scheduled(fixedDelay=60000L*60*24*90)
+		public void init() {
+			regionDataUpdateService.insertData();
+		}
 	
 		@GetMapping(value="/locationRecommand/recommand")
-		public String viewRecommand(Model model) {
+		public String viewRecommand(Model model) {			
 			return "locationRecommand/recommand";	
 		}
 		
