@@ -21,7 +21,7 @@ import com.ipad.project.saleAnalysis.service.ISaleOverlayService;
 import com.ipad.project.saleAnalysis.service.IUpdateDataService;
 
 @Controller
-public class SalaAnalysisController{
+public class SaleAnalysisController{
 	
 	@Autowired
 	ISaleAnalysisService saleAnalysisService;
