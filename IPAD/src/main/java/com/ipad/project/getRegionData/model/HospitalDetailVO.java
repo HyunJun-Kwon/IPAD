@@ -1,21 +1,22 @@
 package com.ipad.project.getRegionData.model;
 
-import java.sql.Date;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 public class HospitalDetailVO {
 	private String hospital_name;
 	private String region;
-	private Date license_date;
+	private String license_date;
 	private String business_status;
 	private String region_name_detail;
 	private String address;
-	private Date close_date;
+	private String close_date;
 	private float x_coordinate;
 	private float y_coordinate;
 
 	public HospitalDetailVO(String hospital_name, String region, String address, String region_name_detail,
-			String business_status, float x_coordinate, float y_coordinate, Date license_date, Date close_date) {
-		this.hospital_name = hospital_name;
+			String business_status, float x_coordinate, float y_coordinate, String license_date, String close_date) {
+		this.hospital_name=hospital_name;
 		this.region = region;
 		this.address = address;
 		this.business_status = business_status;
@@ -26,6 +27,19 @@ public class HospitalDetailVO {
 		this.close_date = close_date;
 
 	}
+	public HospitalDetailVO(String hospital_name, String region_name_detail, String region, Timestamp license_date, Timestamp close_date, String address,
+			BigDecimal x_coordinate, BigDecimal y_coordinate, String business_status) {
+		this.hospital_name=hospital_name;
+		this.region=region;
+		this.region_name_detail=region_name_detail;
+		this.license_date = String.valueOf(license_date);
+		this.close_date=String.valueOf(close_date);
+		this.address=address;
+		this.x_coordinate=Float.valueOf(String.valueOf(x_coordinate));
+		this.y_coordinate=Float.valueOf(String.valueOf(y_coordinate));
+		this.business_status=business_status;
+		
+	}
 
 	public String getAdm_cd() {
 		return region_name_detail;
@@ -35,13 +49,7 @@ public class HospitalDetailVO {
 		this.region_name_detail = adm_cd;
 	}
 
-	public String getHospital_name() {
-		return hospital_name;
-	}
-
-	public void setHospital_name(String hospital_name) {
-		this.hospital_name = hospital_name;
-	}
+	
 
 	public String getRegion() {
 		return region;
@@ -51,11 +59,11 @@ public class HospitalDetailVO {
 		this.region = region;
 	}
 
-	public Date getLicense_date() {
+	public String getLicense_date() {
 		return license_date;
 	}
 
-	public void setLicense_date(Date license_date) {
+	public void setLicense_date(String license_date) {
 		this.license_date = license_date;
 	}
 
@@ -75,11 +83,11 @@ public class HospitalDetailVO {
 		this.address = address;
 	}
 
-	public Date getClose_date() {
+	public String getClose_date() {
 		return close_date;
 	}
 
-	public void setClose_date(Date close_date) {
+	public void setClose_date(String close_date) {
 		this.close_date = close_date;
 	}
 
@@ -97,5 +105,11 @@ public class HospitalDetailVO {
 
 	public void setY_coordinate(float y_coordinate) {
 		this.y_coordinate = y_coordinate;
+	}
+	public String getHospital_name() {
+		return hospital_name;
+	}
+	public void setHospital_name(String hospital_name) {
+		this.hospital_name = hospital_name;
 	}
 }
