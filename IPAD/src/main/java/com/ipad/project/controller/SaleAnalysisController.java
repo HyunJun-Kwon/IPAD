@@ -34,7 +34,6 @@ public class SaleAnalysisController{
 	
 	@PostConstruct
 	public void init() {
-		System.out.println("init 실행");
 		updateRegionDataService.InsertTotalData();
 	}
 	
