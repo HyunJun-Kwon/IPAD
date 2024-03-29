@@ -32,10 +32,10 @@ public class SaleAnalysisController{
 	@Autowired
 	IUpdateDataService updateRegionDataService;
 	
-	@PostConstruct
-	public void init() {
-		updateRegionDataService.InsertTotalData();
-	}
+//	@PostConstruct
+//	public void init() {
+//		updateRegionDataService.InsertTotalData();
+//	}
 	
 	@RequestMapping(value="/saleAnalysis/search")
 	public String viewCommand(Model model) {
