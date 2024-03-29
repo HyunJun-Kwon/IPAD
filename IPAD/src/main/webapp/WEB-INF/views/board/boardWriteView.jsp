@@ -43,34 +43,39 @@
 
 	<div class="container">
 		<div class="row" id="qWriteView">
-			<table style="text-align: center;">
-				<div class="col-12">
+		<div class="col-12">
+			<table style="text-align: center;">		
+			<thead>
+			<colgroup>
+				<col style="width: 10%; border-right: 1px solid rgb(220, 220, 220)"> 
+				<col style="width: 20%;"> 
+				<col style="width: 30%; border-right: 1px solid rgb(220, 220, 220)"> 
+				<col style="width: 10%; border-right: 1px solid rgb(220, 220, 220)"> 
+				<col style="width: 10%; border-right: 1px solid rgb(220, 220, 220)"> 
+				<col style="width: 10%; border-right: 1px solid rgb(220, 220, 220)"> 
+				<col style="width: 10%; border-right: 1px solid rgb(220, 220, 220)"> 
+			</colgroup>		
 					<c:forEach var="bDto" items="${list}">
 						<tr id="qWriteViewTable">
-							<td style="width: 5%; border-right: 1px solid rgb(220, 220, 220)">제목</td>
-							<td>${bDto.subject}</td>
+							<td style="width: 10%; border-right: 1px solid rgb(220, 220, 220)">제목</td>
+							<td colspan ='6'>${bDto.subject}</td>
 						</tr>
 						<tr id="qWriteViewTable"">
-							<td style="width: 5%; border-right: 1px solid rgb(220, 220, 220)">작성자</td>
-							<td style="width: 5%;">${bDto.writer }</td>
-							<td
-								style="width: 60%; border-right: 1px solid rgb(220, 220, 220)"></td>
-							<td
-								style="width: 10%; border-right: 1px solid rgb(220, 220, 220)">작성
-								일자</td>
-							<td
-								style="width: 10%; border-right: 1px solid rgb(220, 220, 220)">${bDto.reg_date }</td>
-							<td style="width: 5%; border-right: 1px solid rgb(220, 220, 220)">조회수</td>
-							<td style="text-align: right; width: 5%">${bDto.readcount }</td>
+							<td>작성자</td>
+							<td style="text-align : left; text-indent : 10px;">${bDto.writer }</td>
+							<td></td>
+							<td>작성	일자</td>
+							<td>${bDto.reg_date }</td>
+							<td>조회수</td>
+							<td >${bDto.readcount }</td>
 						</tr>
 						<tr id="qWriteViewTable" style="height: 400px;">
-							<td style="width: 5%; border-right: 1px solid rgb(220, 220, 220)">내
-								용</td>
-							<td>${bDto.content }</td>
+							<td >내용</td>
+							<td colspan="6" style="text-align : left; text-indent : 10px;">${bDto.content }</td>
 						</tr>
-					</c:forEach>
-				</div>
+					</c:forEach>				
 			</table>
+			</div>
 		</div>
 	</div>
 
