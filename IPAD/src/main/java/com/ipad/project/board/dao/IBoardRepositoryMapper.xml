@@ -28,7 +28,7 @@
 	<insert id="write" parameterType="com.ipad.project.board.model.BoardVo">
 	
 		insert into MEMBERBOARD (num, ref, readcount, writer, subject, email, password, content, reg_date) values 
-		(memberboard_seq.nextVal, memberboard_seq.nextVal, 0, #{writer}, #{subject}, #{email}, #{password}, #{content}, sysdate) 
+		(memberboard_seq.nextVal, memberboard_seq.nextVal, 0, #{writer}, #{subject}, #{email}, #{password}, #{content}, TO_CHAR(sysdate, 'YYYY-MM-DD HH24:MI:SS')) 
 	</insert>
 	
 	<delete id="delete" parameterType="String" >
