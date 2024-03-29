@@ -1,7 +1,5 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	
+	pageEncoding="UTF-8"%>	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar fixed-top navbar-expand-lg">
 	<div class="container">
@@ -45,37 +43,36 @@
 					</li>
 					<li class="nav-item mx-5"><a class="nav-link" href="${pageContext.request.contextPath}/board/boardList.do?pageNum=1">Q&A</a>
 					</li>
-				</ul>
-				
-				<c:set var="loggedInUser" value="${sessionScope.loggedInUser}" />
-				<c:choose>
-					<c:when test="${empty loggedInUser}">
-						<div
-							class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-							<a class="text-dark"
-								href="${pageContext.request.contextPath}/member/loginPage.do">로그인</a>
-							<a id="loginBtn"
-								class="text-white text-decoration-none px-3 py-1 rounded-4"
-								href="${pageContext.request.contextPath}/member/assent.do">회원가입</a>
-						</div>
-
-					</c:when>
-					<c:otherwise>
-
-						<p id="useName">${loggedInUser.name} 님 안녕하세요</p>	
-						<div
-							class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-							<a class="text-dark"
-								href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
-							<a id="loginBtn"
-								class="text-white text-decoration-none px-3 py-1 rounded-4"
-								href="${pageContext.request.contextPath}/member/mypage.do">마이페이지</a>
-						</div>
+				</ul>		
 
 
-					</c:otherwise>
-				</c:choose>
+						<c:set var="loggedInUser" value="${sessionScope.loggedInUser}" />
+						<c:choose>
+							<c:when test="${empty loggedInUser}">
+								<div
+									class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+									<a class="text-dark"
+										href="${pageContext.request.contextPath}/member/loginPage.do">로그인</a>
+									<a id="loginBtn" class="text-white text-decoration-none px-3 py-1 rounded-4"
+										href="${pageContext.request.contextPath}/member/assent.do">회원가입</a>
+								</div>
 
-			</div>
-		</div>
-	</nav>
+							</c:when>
+							<c:otherwise>
+
+								<p id="useName">${loggedInUser.get(0).name} 님 안녕하세요</p>
+								<div
+									class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+									<a class="text-dark"
+										href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
+									<a id="loginBtn" class="text-white text-decoration-none px-3 py-1 rounded-4"
+										href="${pageContext.request.contextPath}/member/mypage.do">마이페이지</a>
+								</div>
+
+
+							</c:otherwise>
+						</c:choose>
+
+					</div>
+				</div>
+		</nav>

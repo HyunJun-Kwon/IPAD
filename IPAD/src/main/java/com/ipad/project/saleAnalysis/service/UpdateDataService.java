@@ -97,7 +97,6 @@ public class UpdateDataService implements IUpdateDataService {
 								if (resultNode.isArray() && resultNode.size() > 0) {
 									JsonNode populationNode = resultNode.get(0);
 									map = convertJsonNodeToMap(populationNode);
-									
 									UpdateDataRepositoryParameter parameter = new UpdateDataRepositoryParameter(map, age, vo);
 									insertData(parameter);
 								}
