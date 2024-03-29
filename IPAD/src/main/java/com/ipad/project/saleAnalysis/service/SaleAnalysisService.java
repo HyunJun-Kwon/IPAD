@@ -89,7 +89,6 @@ public class SaleAnalysisService implements ISaleAnalysisService {
 		patient = (int) Math.round(patient / 30.0);
 		int employee = 0;
 		employee = (int) Math.ceil(((double) patient / 12) / 2.5) + 1;
-		
 		return employee;
 	}
 
