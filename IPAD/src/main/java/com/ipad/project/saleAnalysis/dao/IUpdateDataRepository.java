@@ -1,10 +1,12 @@
 package com.ipad.project.saleAnalysis.dao;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import org.springframework.stereotype.Repository;
 
 import com.ipad.project.saleAnalysis.model.UpdateDataRepositoryParameter;
 
+@Repository
 public interface IUpdateDataRepository {
 	int getRecordNum();
 	ArrayList<String> selectAdm();
